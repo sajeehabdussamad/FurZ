@@ -27,7 +27,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url('img/furZ.JPG') center/cover no-repeat;
+    background: url('/img/furZ.JPG') center/cover no-repeat;
     transition: filter 1s ease; 
 }
 
@@ -128,6 +128,7 @@ body {
 
 /* Responsive Fixes */
 @media (max-width: 768px) {
+    
     .main-title {
         font-size: 75px;
         font-weight: 500;
@@ -182,16 +183,21 @@ body {
         transition: opacity 1s ease, transform 1s ease;
         background-color: #5f3820c7;
         padding: 20px;
-        padding-bottom: 80px;
+        padding-bottom: 40%;
     }
 
     .social-icons i {
-        font-size: 18px;
+        font-size: 24px;
         color: white;
         cursor: pointer;
     }
 
     .description {
-        font-size: 15px;
+        font-size: 18px;
     }
+
+    #portfolioBtn {
+        bottom: 20%;
+    }
+
 }
