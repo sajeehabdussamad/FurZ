@@ -146,7 +146,7 @@ video {
 
 #videos.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-10%);
     visibility: visible;
 }
 
@@ -179,23 +179,59 @@ video {
     position: relative;
     top: 0%;
     left: -95%;
-    transform: scale(0.8);
+    transform: scale(0.5);
 }
 
 .mid {
     position: absolute;
     top: 0%;
+    transform: scale(0.8);
 }
 
 .right {
     position: absolute;
     top: 0%;
     right: -95%;
-    transform: scale(0.8);
+    transform: scale(0.5);
 }
 
+.nav {
+    position: absolute;
+    bottom: -8%;
+    left: 37%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#navL {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    width: 3px;
+    height: 3px;
+    padding: 5px; 
+}
+
+#navM {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    width: 3px;
+    height: 3px;
+    padding: 5px;
+    transform: scale(1.5);
+}
+
+#navR {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    width: 3px;
+    height: 3px;
+    padding: 5px; 
+}
+
+
 #videosBtn {
-    bottom: -15%;
+    bottom: -25%;
 }
 
 /* Responsive Fixes for Tablets */

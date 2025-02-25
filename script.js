@@ -6,6 +6,10 @@ let sVM = 1;
 const vm = document.getElementById('VM');
 const vr = document.getElementById('VR');
 const vl = document.getElementById('VL');
+
+const nm = document.getElementById('navM');
+const nr = document.getElementById('navR');
+const nl = document.getElementById('navL');
     
 
 
@@ -37,6 +41,7 @@ document.getElementById('portfolioBtn').addEventListener('click', function() {
     vr.style.transform = 'translateX(0%) scale(0.8)';
     MidVM = true;
     MidVR = false;
+    MidVL = false;
     sVM = 1;
     // Force reflow to apply the styles immediately
     vl.offsetHeight;
@@ -50,6 +55,22 @@ document.getElementById('portfolioBtn').addEventListener('click', function() {
     // VM video starts playing
     vm.querySelector('video').muted = false;
     vm.querySelector('video').play();
+
+    nl.style.transition = 'none';
+    nm.style.transition = 'none';
+    nr.style.transition = 'none';
+    nl.style.transform = 'translateX(0)';
+    nm.style.transform = 'translateX(0) scale(1.5)';
+    nr.style.transform = 'translateX(0)';
+
+    // Force reflow to apply the styles immediately
+    nl.offsetHeight;
+    nm.offsetHeight;
+    nr.offsetHeight;
+    // Remove the transition property to allow future transitions
+    nl.style.transition = '';
+    nm.style.transition = '';
+    nr.style.transition = '';
 });
 
 document.getElementById('videosBtn').addEventListener('click', function() {
@@ -71,16 +92,24 @@ document.getElementById('videosBtn').addEventListener('click', function() {
 
 document.getElementById('VL').addEventListener('click', function() {
     if (MidVL === false) {
-        vl.style.transform = 'translateX(100%)';
-        vm.style.transform = 'translateX(100%) scale(0.8)';
-        vr.style.transform = 'translateX(100%)';
+        vl.style.transform = 'translateX(95%)';
+        vm.style.transform = 'translateX(95%) scale(0.8)';
+        vr.style.transform = 'translateX(95%)';
         MidVL = true;
         MidVM = false;
+        MidVR = false;
         sVM = 2;
         vl.querySelector('video').muted = false;
         vl.querySelector('video').play();
         vm.querySelector('video').pause();
         vr.querySelector('video').pause();
+
+        nl.style.transform = 'translateX(30px) scale(1.5)';
+        nm.style.transform = 'translateX(30px)';
+        nr.style.transform = 'translateX(30px)';
+        nl.style.transition = 'transform 0.5s';
+        nm.style.transition = 'transform 0.5s';
+        nr.style.transition = 'transform 0.5s';
     }
 });
 
@@ -92,38 +121,59 @@ document.getElementById('VM').addEventListener('click', function() {
             vr.style.transform = 'translateX(0%) scale(0.8)';
             MidVM = true;
             MidVL = false;
-            sVM = 1;
-            vm.querySelector('video').muted = false;
-            vm.querySelector('video').play();
-            vl.querySelector('video').pause();
-            vr.querySelector('video').pause();
-        } else if (sVM === 0) {
-            vl.style.transform = 'translateX(0%) scale(0.8)';
-            vm.style.transform = 'translateX(0%)';
-            vr.style.transform = 'translateX(0%) scale(0.8)';
-            MidVM = true;
             MidVR = false;
             sVM = 1;
             vm.querySelector('video').muted = false;
             vm.querySelector('video').play();
             vl.querySelector('video').pause();
             vr.querySelector('video').pause();
+            nl.style.transform = 'translateX(0px)';
+            nm.style.transform = 'translateX(0px) scale(1.5)';
+            nr.style.transform = 'translateX(0px)';
+            nl.style.transition = 'transform 0.5s';
+            nm.style.transition = 'transform 0.5s';
+            nr.style.transition = 'transform 0.5s';
+        } else if (sVM === 0) {
+            vl.style.transform = 'translateX(0%) scale(0.8)';
+            vm.style.transform = 'translateX(0%)';
+            vr.style.transform = 'translateX(0%) scale(0.8)';
+            MidVM = true;
+            MidVR = false;
+            MidVL = false;
+            sVM = 1;
+            vm.querySelector('video').muted = false;
+            vm.querySelector('video').play();
+            vl.querySelector('video').pause();
+            vr.querySelector('video').pause();
+            nl.style.transform = 'translateX(0px)';
+            nm.style.transform = 'translateX(0px) scale(1.5)';
+            nr.style.transform = 'translateX(0px)';
+            nl.style.transition = 'transform 0.5s';
+            nm.style.transition = 'transform 0.5s';
+            nr.style.transition = 'transform 0.5s';
         }
     }
 });
 
 document.getElementById('VR').addEventListener('click', function() {
     if (MidVR === false) {
-        vl.style.transform = 'translateX(-100%)';
-        vm.style.transform = 'translateX(-100%) scale(0.8)';
-        vr.style.transform = 'translateX(-100%)';
+        vl.style.transform = 'translateX(-95%)';
+        vm.style.transform = 'translateX(-95%) scale(0.8)';
+        vr.style.transform = 'translateX(-95%)';
         MidVR = true;
         MidVM = false;
+        MidVL = false;
         sVM = 0;
         vr.querySelector('video').muted = false;
         vr.querySelector('video').play();
         vm.querySelector('video').pause();
         vl.querySelector('video').pause();
+        nl.style.transform = 'translateX(-30px)';
+        nm.style.transform = 'translateX(-30px)';
+        nr.style.transform = 'translateX(-30px) scale(1.5)';
+        nl.style.transition = 'transform 0.5s';
+        nm.style.transition = 'transform 0.5s';
+        nr.style.transition = 'transform 0.5s';
     }
 });
 
