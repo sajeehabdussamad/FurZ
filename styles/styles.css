@@ -36,7 +36,7 @@ video {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url('img/furZ_cropped.jpg') center/cover no-repeat;
+    background: url('https://github.com/sajeehabdussamad/FurZ/blob/b72dd25c5355d1abb6cd639f8efdda992fb95b55/img/furZ_cropped.jpg') center/cover no-repeat;
     transition: filter 1s ease;
     overflow: hidden; /* Prevents scrolling */
 }
