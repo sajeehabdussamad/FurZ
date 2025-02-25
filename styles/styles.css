@@ -178,7 +178,7 @@ video {
 .left {
     position: relative;
     top: 0%;
-    left: -100%;
+    left: -95%;
     transform: scale(0.8);
 }
 
@@ -190,7 +190,7 @@ video {
 .right {
     position: absolute;
     top: 0%;
-    right: -100%;
+    right: -95%;
     transform: scale(0.8);
 }
 
