@@ -94,7 +94,7 @@ document.getElementById('VL').addEventListener('click', function() {
     if (MidVL === false) {
         vl.style.transform = 'translateX(95%)';
         vm.style.transform = 'translateX(95%) scale(0.8)';
-        vr.style.transform = 'translateX(95%)';
+        vr.style.transform = 'translateX(95%) scale(0.8)';
         MidVL = true;
         MidVM = false;
         MidVR = false;
@@ -157,7 +157,7 @@ document.getElementById('VM').addEventListener('click', function() {
 
 document.getElementById('VR').addEventListener('click', function() {
     if (MidVR === false) {
-        vl.style.transform = 'translateX(-95%)';
+        vl.style.transform = 'translateX(-95%) scale(0.8)';
         vm.style.transform = 'translateX(-95%) scale(0.8)';
         vr.style.transform = 'translateX(-95%)';
         MidVR = true;
